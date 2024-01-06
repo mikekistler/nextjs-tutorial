@@ -3,6 +3,8 @@ import Image from 'next/image'
 import styles from '@/styles/Home.module.css'
 import { GetServerSideProps } from 'next';
 import { NewsArticle, NewsArticlesResponse } from '@/models/NewsArticles';
+import NewsArticlesGrid from '@/components/NewsArticlesGrid';
+import { Alert } from 'react-bootstrap';
 
 interface BreakingNewsPageProps {
   newsArticles: NewsArticle[],
@@ -25,7 +27,11 @@ export default function BreakingNewsPage({ newsArticles }: BreakingNewsPageProps
       </Head>
       <main>
         <h1>Breaking News</h1>
-        {JSON.stringify(newsArticles)}
+        <Alert>
+          This page uses <strong>getServerSideProps</strong> to fetch data server-side on every request.
+          This allows search engines to crawl the page content and <strong>improves SEO</strong>.
+        </Alert>
+        <NewsArticlesGrid articles={newsArticles} />
       </main>
     </>
   )

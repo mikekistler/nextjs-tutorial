@@ -1,4 +1,4 @@
-export interface NewsArticles {
+export interface NewsArticle {
     author: string;
     title: string;
     description: string;
@@ -11,5 +11,5 @@ export interface NewsArticles {
 export interface NewsArticlesResponse {
     status: string;
     totalResults: number;
-    articles: NewsArticles[];
+    articles: NewsArticle[];
 }
