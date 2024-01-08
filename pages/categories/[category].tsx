@@ -32,6 +32,7 @@ export const getStaticProps: GetStaticProps<CategoryNewsPageProps> = async ({ pa
         // Refetch the data every 5 minutes
         revalidate: 5 * 60 // 5 minutes
     }
+    // let error go to 500 page
 }
 
 const CategoryNewsPage = ({ newsArticles }: CategoryNewsPageProps) => {
